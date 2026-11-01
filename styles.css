@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Playfair Display, serif-sans";
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+header {
+     position: fixed;
+     width: 90vw;
+     left: 50%;
+     transform: translateX(-50%);
+     display: grid;
+     align-items: center;
+     grid-template-columns: 1fr 600px;
+     gap: 100px;
+     z-index: 2;
+
+     & img {
+         width: 250px;
+    }
+
+    & nav {
+         & ul {
+             display: grid;
+             grid-template-columns: repeat(3, 200px);
+         }
+    }
+}
+
+section {
+    background-image: radial-gradient(#5a0383fb, #4a0285);
+    height: 100vh;
+    position: relative;
+
+    & .list {
+         width: 70vw;
+         height: 100%;
+         margin: auto;
+         position: relative;
+
+         & .item {
+             position: absolute;
+             inset: 0;
+
+             & .car-img {
+                  position: absolute;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 60%;
+
+                  & img {
+                     width: 100%;
+                     transform: rotate(-30deg);
+                  }
+             }
+               &::before {
+               content: '';
+               position: absolute;
+               background-color: #000;
+               width: 100%;
+               height: 100px;
+               top: 150%;
+               left: 50px;
+               border: 50%;
+               filter: blur(50px);
+}
+
+             & .conteúdo {
+                    position: absolute;
+                    right: 100px;
+                    width: 70%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: end;
+                    gap: 20px;
+
+                    & .car-information {
+                           font-weight: bold;
+                    }
+
+                    & h2 {
+                        font-size: 4em;
+                        line-height: 1em;
+                        font-family: "Playfair Display, serif-sans";
+                        
+}
+                    }
+
+                    & .descrição {
+                        color: #e2d5d5;
+                        font-size: 13px;
+                        text-align: right;
+                        max-width: 300px;
+                       font-family: "Playfair Display, serif-sans";
+
+            }
+
+                    & .informação {
+                         border-radius: 30px;
+                         height: 35px;
+                         width: 120px;
+                         text-transform: uppercase;
+                         border: 2px solid #40067a;
+                         background-color: #bbfd15;
+                         color: #000;
+                         cursor: pointer;
+                         font-weight: bold;
+                         display: inline-flex;
+                         align-items: center;
+                         justify-content: center;
+                         text-decoration: none;
+                    }
+             }
+         }
+
+
+         &::before {
+             content: '';
+             position:absolute;
+             height: 200px;
+             width: 100%;
+             top:46%;
+             border-top: 1px solid #fff;
+         }
+    }
+
+    
+    .arrows {
+        width: 72vw;
+        position: absolute;
+        top: 40%;
+        left: 51%;
+        transform: translate(-50%, 25%);
+        display: flex;
+        justify-content: space-between;
+    
+
+
+    & button:nth-child(1) {
+           & img {
+               transform: scale(-1);
+           }
+      }  
+
+    & button {
+        top:60%;
+        width: 60px;
+        height: 50px;
+        border-radius: 60%;
+        border: none;
+        cursor: pointer;
+
+        & img{
+            width: 20px;
+            margin-top: 4px;
+            cursor: pointer;
+        }
+          
+         &:hover {
+             background-color: #bdff14da;
+          }
+    }
+}
+
+   .indicators {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100px;
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        gap: 15px;
+
+        & .number {
+             font-size: 3em; 
+        }
+
+        & ul {
+            display: flex;
+            gap: 10px;
+
+            & li {
+                width: 50px;
+                height: 5px;
+                background-color: #b8fa11;
+                border-radius: 5px;
+                transition: 0.5s;
+            }
+
+            & .active {
+                 background-color: #fff;
+            }
+        }
+    }
+
+ section {
+    
+       & .list{
+      
+          & .item {
+            transform: translateX(100vw);
+            transition: 0.5s;
+            opacity: 0;
+
+             & .car-img{
+                 & img {
+                     transform: rotate(-15deg);
+                     transition: 0.5s;
+                     transition-delay: 0.3s;
+
+                 }
+             }
+                 
+                          & .car-information,
+                          & h2,
+                          & .descrição,
+                          & .informação {
+                              transform: translateX(200px);
+                              transition: 0.7s;
+                              transition-delay: 0.3s;
+                              opacity: 0;
+                        }
+             
+
+                  & h2 { 
+                     transition-delay: 0.5s;
+                  }
+
+                  & .descrição {
+                       transition-delay: 0.7s;
+                  }
+
+                    & .informação {
+                         transition-delay: 0.9s;
+                    }
+                }
+            
+
+                & .active {
+                     transform: translateX(0);
+                     transition: 0.5s;
+                     opacity: 1;
+                } 
+
+                   & .car-img{
+                 & img {
+                     transform: rotate(-20deg)
+                 }
+             }
+
+
+                & .conteúdo {
+                  
+                 & .car-information, h2, .descrição, .informação{
+                        transform: translateX(0);
+                        opacity: 1;
+                 }
+
+        }
+    }
+ }
+
+nav ul li a {
+  color: white !important;
+  text-decoration: none;
+}
+nav ul li a[href="faleconosco.html"] {
+  color: #ffff !important;
+  font-weight: bold;
+}
